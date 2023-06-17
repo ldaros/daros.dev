@@ -44,17 +44,15 @@ export const Terminal: FC<TerminalProps> = ({ kernel }) => {
   };
 
   useEffect(() => {
+    if (preRef.current) {
+      preRef.current.scrollTop = preRef.current.scrollHeight;
+    }
+
     const result = kernel.run("pwd");
     if (result?.stream) {
       setDir(result.stream);
     }
-  }, [kernel]);
-
-  useEffect(() => {
-    if (preRef.current) {
-      preRef.current.scrollTop = preRef.current.scrollHeight;
-    }
-  }, [output]);
+  }, [kernel, output]);
 
   return (
     <div onClick={handleFocus} className="terminal">

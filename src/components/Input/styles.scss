@@ -1,0 +1,14 @@
+.input-container {
+  display: flex;
+
+  .user {
+    margin-right: 5px;
+  }
+}
+
+[contenteditable] {
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Container } from "react-grid-system";
-import { Terminal } from "~components/Terminal";
-import { Kernel } from "./kernel";
+import { Terminal } from "@unix/components/Terminal";
+import { Kernel } from "@unix/kernel";
 
 export const App: FC = () => {
   const kernel = new Kernel();

@@ -1,0 +1,7 @@
+[
+  { "name": "bin", "type": "folder" },
+  { "name": "etc", "type": "folder" },
+  { "name": "home", "type": "folder" },
+  { "name": "tmp", "type": "folder" },
+  { "name": ".history", "type": "file" }
+]

@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef, FC } from "react";
-import { Input } from "~/components/Input";
-import { Kernel } from "~/kernel";
+import { Input } from "@unix/components/Input";
+import { Kernel } from "@unix/kernel";
+import { IO } from "@unix/kernel/io";
+import { _File } from "@unix/kernel/filesys/types";
+
 import "./styles.scss";
-import { IO } from "~/kernel/io";
-import { FileSystemFile } from "~/kernel/filesys";
 
 type TerminalProps = {
   kernel: Kernel;
@@ -73,6 +74,6 @@ export const Terminal: FC<TerminalProps> = ({ kernel }) => {
 
 const updateHistoryFile = (history: string[], kernel: Kernel) => {
   const historyString = history.join("\n");
-  const historyFile = kernel.fs.findNode("/.history") as FileSystemFile;
+  const historyFile = kernel.fs.findNode("/.history") as _File;
   historyFile.content = historyString;
 };

@@ -3,6 +3,8 @@
 
 .button {
   width: fit-content;
+  display: flex;
+  align-items: center;
 
   color: $color-black;
   background-color: $color-white;
@@ -21,5 +23,10 @@
 
   &:active {
     background-color: $color-red;
+  }
+
+  &___icon {
+    font-size: 30px;
+    line-height: 0;
   }
 }

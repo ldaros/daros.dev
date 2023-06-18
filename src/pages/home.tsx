@@ -1,10 +1,9 @@
 import { FC } from "react";
-import { BsFillTerminalFill } from "react-icons/bs";
-import { BiGame } from "react-icons/bi";
 
 import { Terminal } from "~/features/unix/components/Terminal";
 import { Banner, Title, Card, CardGrid, Button } from "~/components";
 import { Header, Footer, Grid } from "~/layout";
+import { Icon } from "~/lib/Icon";
 
 export const Home: FC = () => {
   return (
@@ -31,18 +30,16 @@ export const Home: FC = () => {
         <Card
           title="js-unix"
           description="A UNIX-like operating system written in TypeScript."
-          icon={<BsFillTerminalFill />}
+          icon={<Icon name="BsFillTerminalFill" />}
           image="/assets/images/unix.png"
         />
 
         <Card
           title="Freeway"
           description="A remake of the classic Atari game Freeway."
-          icon={<BiGame />}
+          icon={<Icon name="BiGame" />}
           image="/assets/images/freeway.png"
-          button={
-            <Button to="https://ldaros.github.io/js-freeway/" text="Play" />
-          }
+          button={<Button to="/projects/freeway/" text="Play" />}
         />
       </CardGrid>
 

@@ -21,7 +21,9 @@
     "baseUrl": "./",
     "paths": {
       "~/*": ["src/*"],
-      "@unix/*": ["src/features/unix/*"]
+      "@unix/*": ["src/features/unix/*"],
+      "variables": ["src/styles/variables.scss"],
+      "mixins": ["src/styles/mixins.scss"]
     }
   },
   "include": ["src"],

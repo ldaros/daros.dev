@@ -10,6 +10,8 @@ export default defineConfig({
     alias: {
       "~": fileURLToPath(new URL("./src/", import.meta.url)),
       "@unix": fileURLToPath(new URL("./src/features/unix/", import.meta.url)),
+      "mixins": fileURLToPath(new URL("./src/styles/mixins/", import.meta.url)),
+      "variables": fileURLToPath(new URL("./src/styles/variables/", import.meta.url)),
     },
   },
 });

@@ -1,16 +1,13 @@
 import { FC } from "react";
-import { Container } from "react-grid-system";
-import { Terminal } from "@unix/components/Terminal";
-import { Kernel } from "@unix/kernel";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Home } from "./pages/home";
 
 export const App: FC = () => {
-  const kernel = new Kernel();
-
   return (
-    <Container>
-      <h1 className="title">daros.dev</h1>
-
-      <Terminal kernel={kernel} />
-    </Container>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 };

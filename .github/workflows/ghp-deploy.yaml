@@ -33,6 +33,7 @@ jobs:
         run: |
           git checkout --orphan gh-pages
           npm run build
+          echo "daros.dev" > dist/CNAME
           git --work-tree dist add --all
           git --work-tree dist commit -m "Deploy id $GITHUB_RUN_ID"
           git push origin HEAD:gh-pages --force

@@ -1,12 +1,22 @@
 import { FC } from "react";
-import { Header, Banner, Grid } from "~/components";
-
 import { Terminal } from "~/features/unix/components/Terminal";
-import { Kernel } from "~/features/unix/kernel";
+import {
+  Header,
+  Banner,
+  Grid,
+  Title,
+  Card,
+  CardGrid,
+  Button,
+} from "~/components";
+
+import { BsFillTerminalFill } from "react-icons/bs";
+import { BiGame } from "react-icons/bi";
+
+import placeholder from "~/assets/images/placeholder.png";
+import freeway from "~/assets/images/freeway.png";
 
 export const Home: FC = () => {
-  const kernel = new Kernel();
-
   return (
     <Grid>
       <Header />
@@ -15,11 +25,28 @@ export const Home: FC = () => {
         id="featured"
         title="js-unix"
         description="A UNIX-like operating system written in TypeScript."
-        button="Learn More"
-        link="https://github.com/ldaros/daros.dev/tree/master/src/features/unix"
+        button={<Button to="#featured" text="Learn More" />}
       >
-        <Terminal kernel={kernel} />
+        <Terminal />
       </Banner>
+
+      <Title id="projects">Projects</Title>
+
+      <CardGrid>
+        <Card
+          title="js-unix"
+          description="A UNIX-like operating system written in TypeScript."
+          icon={<BsFillTerminalFill />}
+          image={placeholder}
+        />
+
+        <Card
+          title="Freeway"
+          description="A remake of the classic Atari game Freeway."
+          icon={<BiGame />}
+          image={freeway}
+        />
+      </CardGrid>
     </Grid>
   );
 };

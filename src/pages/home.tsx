@@ -1,27 +1,24 @@
 import { FC } from "react";
-import { Header } from "~/components";
-import { Banner } from "~/components/Banner";
-import { Grid } from "~/components/Grid";
+import { Header, Banner, Grid } from "~/components";
 
-import placeholderImage from "~/assets/images/placeholder.png";
+import { Terminal } from "~/features/unix/components/Terminal";
+import { Kernel } from "~/features/unix/kernel";
 
 export const Home: FC = () => {
+  const kernel = new Kernel();
+
   return (
     <Grid>
       <Header />
 
       <Banner
         id="featured"
-        title="Featured"
-        description="Lorem ipsum dolor sit amet consectetur. Amet non consequat sagittis nec."
-        button="click me"
-        link="#"
+        title="js-unix"
+        description="A UNIX-like operating system written in TypeScript."
+        button="Learn More"
+        link="https://github.com/ldaros/daros.dev/tree/master/src/features/unix"
       >
-        <img
-          src={placeholderImage}
-          alt="placeholder"
-          className="banner__image"
-        />
+        <Terminal kernel={kernel} />
       </Banner>
     </Grid>
   );

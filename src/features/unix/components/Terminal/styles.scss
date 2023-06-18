@@ -5,10 +5,13 @@
   border: 1px solid #fff;
   padding: 10px;
 
-  max-width: 640px; /* 80 characters * 8px per character */
+  width: 100%;
   font-family: monospace;
 
+  background-color: #000;
+
   .output {
+    font-family: monospace;
     max-height: 15em;
     overflow-y: hidden;
     scroll-behavior: smooth;

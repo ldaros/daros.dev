@@ -15,6 +15,8 @@ export const Terminal: FC<TerminalProps> = ({ kernel }) => {
   const [dir, setDir] = useState("");
   const [history, setHistory] = useState<string[]>([]);
 
+  const motd = "Welcome to js-unix 0.0.1\n\n";
+
   const inputRef = useRef<HTMLInputElement>(null);
   const preRef = useRef<HTMLPreElement>(null);
 
@@ -53,6 +55,10 @@ export const Terminal: FC<TerminalProps> = ({ kernel }) => {
       setDir(result.stream);
     }
   }, [kernel, output]);
+
+  useEffect(() => {
+    setOutput(motd);
+  }, []);
 
   return (
     <div onClick={handleFocus} className="terminal">

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { NavLink } from "../NavLink";
+import { NavLink } from "~/components";
 
 import "./styles.scss";
 

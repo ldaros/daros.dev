@@ -15,40 +15,35 @@
   &__left {
     display: flex;
     width: 100%;
+  }
 
-    & .banner__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @include breakpoint(desktop) {
-      width: 150%;
-    }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &__right {
     width: 100%;
-
     display: flex;
     flex-direction: column;
-
-    padding: 20px 55px;
+    padding: 20px 30px;
     gap: 28px;
     background-color: $color-black;
 
     @include breakpoint(desktop) {
+      width: 60%;
       padding: 66px 52px;
     }
+  }
 
-    & .banner__title {
-      font-weight: 500;
-      font-size: 24px;
-    }
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+  }
 
-    & .banner__description {
-      font-weight: 300;
-      font-size: 16px;
-    }
+  &__description {
+    font-weight: 300;
+    font-size: 16px;
   }
 }

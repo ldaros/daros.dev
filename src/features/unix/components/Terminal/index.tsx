@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, FC } from "react";
+import { useMemo, useState, useEffect, useRef, FC } from "react";
 import { Input } from "@unix/components/Input";
 import { Kernel } from "@unix/kernel";
 import { IO } from "@unix/kernel/io";
@@ -6,17 +6,16 @@ import { _File } from "@unix/kernel/filesys/types";
 
 import "./styles.scss";
 
-type TerminalProps = {
-  kernel: Kernel;
-};
-
-export const Terminal: FC<TerminalProps> = ({ kernel }) => {
+export const Terminal: FC = () => {
   const [output, setOutput] = useState("");
   const [dir, setDir] = useState("");
   const [history, setHistory] = useState<string[]>([]);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const preRef = useRef<HTMLPreElement>(null);
+  
+  const kernel = useMemo(() => new Kernel(), []);
+  const motd = "Welcome to js-unix 0.0.1\n\n";
 
   const handleInput = (value: string) => {
     setOutput((prev) => `${prev}$ ${value}\n`);
@@ -53,6 +52,10 @@ export const Terminal: FC<TerminalProps> = ({ kernel }) => {
       setDir(result.stream);
     }
   }, [kernel, output]);
+
+  useEffect(() => {
+    setOutput(motd);
+  }, []);
 
   return (
     <div onClick={handleFocus} className="terminal">

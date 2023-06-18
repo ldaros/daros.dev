@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+
+  &__logo {
+    font-weight: 700;
+    font-size: 32px;
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover {
+      color: $color-grey;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  @include breakpoint(desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+}

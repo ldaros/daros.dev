@@ -1,0 +1,39 @@
+@import "variables";
+
+.rich-text {
+  max-width: 800px;
+
+  h1 {
+    font-size: 2.5em;
+    margin: 1em 0;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin: 1em 0 0.6em;
+  }
+
+  p {
+    font-size: 1.2em;
+    margin-bottom: 1.2em;
+    text-align: justify;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2em;
+    }
+
+    h2 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1em;
+    }
+  }
+}

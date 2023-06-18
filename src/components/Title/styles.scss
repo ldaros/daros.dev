@@ -1,0 +1,18 @@
+@import "variables";
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__icon {
+    font-size: 30px;
+    color: $color-red;
+    line-height: 0;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 24px;
+  }
+}

@@ -13,9 +13,6 @@ import {
 import { BsFillTerminalFill } from "react-icons/bs";
 import { BiGame } from "react-icons/bi";
 
-import placeholder from "~/assets/images/placeholder.png";
-import freeway from "~/assets/images/freeway.png";
-
 export const Home: FC = () => {
   return (
     <Grid>
@@ -37,14 +34,14 @@ export const Home: FC = () => {
           title="js-unix"
           description="A UNIX-like operating system written in TypeScript."
           icon={<BsFillTerminalFill />}
-          image={placeholder}
+          image="/assets/images/unix.png"
         />
 
         <Card
           title="Freeway"
           description="A remake of the classic Atari game Freeway."
           icon={<BiGame />}
-          image={freeway}
+          image="/assets/images/freeway.png"
         />
       </CardGrid>
     </Grid>

@@ -6,4 +6,4 @@ export { NavLink } from "./NavLink";
 export { Title } from "./Title";
 export { Card } from "./Card";
 export { CardGrid } from "./CardGrid";
-
+export { Footer } from "./Footer";

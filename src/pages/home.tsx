@@ -8,6 +8,7 @@ import {
   Card,
   CardGrid,
   Button,
+  Footer,
 } from "~/components";
 
 import { BsFillTerminalFill } from "react-icons/bs";
@@ -22,7 +23,12 @@ export const Home: FC = () => {
         id="featured"
         title="js-unix"
         description="A UNIX-like operating system written in TypeScript."
-        button={<Button to="#featured" text="Learn More" />}
+        button={
+          <Button
+            to="https://github.com/ldaros/daros.dev/tree/master/src/features/unix"
+            text="Learn More"
+          />
+        }
       >
         <Terminal />
       </Banner>
@@ -42,8 +48,13 @@ export const Home: FC = () => {
           description="A remake of the classic Atari game Freeway."
           icon={<BiGame />}
           image="/assets/images/freeway.png"
+          button={
+            <Button to="https://ldaros.github.io/js-freeway/" text="Play" />
+          }
         />
       </CardGrid>
+
+      <Footer />
     </Grid>
   );
 };

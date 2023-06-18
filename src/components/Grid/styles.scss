@@ -16,8 +16,16 @@
     gap: 30px;
     padding: 30px 15px;
 
+    @include breakpoint(tablet) {
+      padding: 30px 100px;
+    }
+
     @include breakpoint(desktop) {
       padding: 30px 260px;
+    }
+
+    @include breakpoint(large) {
+      padding: 30px 400px;
     }
   }
 }

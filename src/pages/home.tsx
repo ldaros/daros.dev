@@ -1,18 +1,10 @@
 import { FC } from "react";
-import { Terminal } from "~/features/unix/components/Terminal";
-import {
-  Header,
-  Banner,
-  Grid,
-  Title,
-  Card,
-  CardGrid,
-  Button,
-  Footer,
-} from "~/components";
-
 import { BsFillTerminalFill } from "react-icons/bs";
 import { BiGame } from "react-icons/bi";
+
+import { Terminal } from "~/features/unix/components/Terminal";
+import { Banner, Title, Card, CardGrid, Button } from "~/components";
+import { Header, Footer, Grid } from "~/layout";
 
 export const Home: FC = () => {
   return (

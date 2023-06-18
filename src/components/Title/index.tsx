@@ -10,7 +10,7 @@ interface TitleProps {
 
 export const Title: FC<TitleProps> = ({ children, id, icon }) => (
   <div className="title">
-    <div className="title__icon">{icon}</div>
+    {icon && <div className="title__icon">{icon}</div>}
 
     <h2 id={id} className="title__text">
       {children}

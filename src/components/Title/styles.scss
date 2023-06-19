@@ -1,8 +1,10 @@
 @import "variables";
+@import "mixins";
 
 .title {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
 
   &__icon {
@@ -14,5 +16,9 @@
   &__text {
     font-weight: 500;
     font-size: 24px;
+  }
+
+  @include breakpoint(desktop) {
+    flex-direction: row;
   }
 }

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: *
+Disallow: /assets/
+
+Sitemap: https://daros.dev/sitemap.xml

@@ -31,14 +31,14 @@ export const Home: FC = () => {
           title="js-unix"
           description="A UNIX-like operating system written in TypeScript."
           icon={<Icon name="BsFillTerminalFill" />}
-          image="/assets/images/unix.png"
+          image="/assets/images/unix.webp"
         />
 
         <Card
           title="Freeway"
           description="A remake of the classic Atari game Freeway."
           icon={<Icon name="BiGame" />}
-          image="/assets/images/freeway.png"
+          image="/assets/images/freeway.webp"
           button={<Button to="/projects/freeway/" text="Play" />}
         />
       </CardGrid>

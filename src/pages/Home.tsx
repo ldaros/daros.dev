@@ -33,6 +33,7 @@ export const Home: FC = () => {
               description="A UNIX-like operating system written in TypeScript."
               icon={<Icon name="BsFillTerminalFill" />}
               image="/assets/images/unix.webp"
+              button={<Button to="/" text="Learn More" />}
             />
 
             <Card
@@ -40,7 +41,7 @@ export const Home: FC = () => {
               description="A remake of the classic Atari game Freeway."
               icon={<Icon name="BiGame" />}
               image="/assets/images/freeway.webp"
-              button={<Button to="/projects/freeway/" text="Play" />}
+              button={<Button to="/projects/freeway/" text="Learn More" />}
             />
           </CardGrid>
         </section>

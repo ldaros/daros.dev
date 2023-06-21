@@ -1,3 +1,5 @@
+@import "variables";
+
 *,
 *::before,
 *::after {
@@ -7,8 +9,8 @@
 }
 
 body {
-  background-color: #13131b;
-  color: #fff;
+  background-color: $color-white;
+  color: $color-black;
 
   font-family: 'Inter', sans-serif;
   font-size: 16px;

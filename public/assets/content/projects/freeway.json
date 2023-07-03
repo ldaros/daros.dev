@@ -1,8 +1,0 @@
-{
-  "id": "freeway",
-  "title": "Rediscovering a Classic: The JavaScript Remake of Freeway",
-  "description": "<p>If you're a fan of classic video games, the name Atari 2600 surely rings a bell, and among its celebrated games, Activision's Freeway holds a special place. Today, we're excited to bring you a recreation of this timeless gem using modern web technologies.</p><p>Freeway, with its simple yet challenging objective of helping a chicken cross a bustling road, captivated players in the '80s and remains a classic example of engaging gameplay. Our choice to recreate Freeway aimed to pay homage to this addictive simplicity while showcasing the capabilities of JavaScript and the P5.js library for creative game development.</p>",
-  "iframe": "https://ldaros.github.io/js-freeway/",
-  "icon": "BiGame",
-  "gh_repo": "https://github.com/ldaros/js-freeway"
-}

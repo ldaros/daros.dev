@@ -10,7 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.16",
+    "@contentful/rich-text-html-renderer": "^16.1.0",
+    "@contentful/rich-text-types": "^16.2.0",
     "@vercel/analytics": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-grid-system": "^8.1.9",

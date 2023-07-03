@@ -1,39 +1,53 @@
 import { FC } from "react";
 import { useParams } from "react-router-dom";
-import { useProjectPage } from "~/services/cms";
-
 import { Header, Footer, Grid } from "~/layout";
 import { RichText, Title, IFrame, Button } from "~/components";
+import { getProjectBySlug } from "~/services/cms/queries";
 import { Icon } from "~/lib/Icon";
+import { useQuery } from "@apollo/client";
+import { ProjectData } from "~/services/cms/types";
+
+interface ProjectDetailProps {
+  project: ProjectData;
+}
 
 export const Project: FC = () => {
   const { id } = useParams();
-  const { data: project, loading, error } = useProjectPage(id);
+  const { data, loading, error } = useQuery(getProjectBySlug, {
+    variables: { slug: id },
+  });
+  const project = data?.projectCollection?.items[0] as ProjectData;
 
   if (loading || error || !project) {
-    return <div></div>;
+    return <div>Loading...</div>;
   }
 
   return (
     <Grid>
       <Header />
+      <ProjectDetail project={project} />
+      <Footer />
+    </Grid>
+  );
+};
 
-      <IFrame src={project.iframe} />
+const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
+  return (
+    <>
+      {project.iframeLink && <IFrame src={project.iframeLink} />}
 
       <article>
-        <Title icon={<Icon name={project.icon} />}>{project.title}</Title>
-        <RichText>{project.description}</RichText>
+        <Title icon={<Icon name={project.icon ?? ""} />}>{project.name}</Title>
+        <RichText data={project.content?.json} />
 
-        {project.gh_repo && (
+        {project.gitHubRepository && (
           <Button
             icon={<Icon name="BsGithub" />}
-            to={project.gh_repo}
+            to={project.gitHubRepository}
             text="View on GitHub"
           />
         )}
       </article>
-
-      <Footer />
-    </Grid>
+    </>
   );
 };

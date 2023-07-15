@@ -7,6 +7,8 @@ import { Icon } from "~/lib/Icon";
 import { useQuery } from "@apollo/client";
 import { ProjectData } from "~/services/cms/types";
 
+import "~/styles/pages/Project.scss";
+
 interface ProjectDetailProps {
   project: ProjectData;
 }
@@ -33,11 +35,18 @@ export const Project: FC = () => {
 
 const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
   return (
-    <>
+    <article className="project">
+
+      <div className="project__header">
+        <p className="project__type">
+          {project.type == "personal" ? "Personal" : "Professional"} Project
+        </p>
+        <h1 className="project__title">{project.name}</h1>
+      </div>
+
       {project.iframeLink && <IFrame src={project.iframeLink} />}
 
-      <article>
-        <Title icon={<Icon name={project.icon ?? ""} />}>{project.name}</Title>
+      <div className="project__content">
         <RichText data={project.content?.json} />
 
         {project.gitHubRepository && (
@@ -47,7 +56,7 @@ const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
             text="View on GitHub"
           />
         )}
-      </article>
-    </>
+      </div>
+    </article>
   );
 };

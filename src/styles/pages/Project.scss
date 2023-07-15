@@ -1,0 +1,43 @@
+@import "variables";
+@import "mixins";
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 50px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__type {
+    color: $color-gray;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__title {
+    color: $color-black;
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  @include breakpoint(tablet) {
+    &__type {
+      font-size: 24px;
+    }
+
+    &__title {
+      font-size: 48px;
+    }
+  }
+}

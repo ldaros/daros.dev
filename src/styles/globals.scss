@@ -16,17 +16,9 @@ body {
   background-color: $color-white;
   color: $color-black;
 
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-}
-
-article {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5em;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .page__section {

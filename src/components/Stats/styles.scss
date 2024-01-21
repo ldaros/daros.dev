@@ -1,0 +1,54 @@
+@import "variables";
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 40px;
+
+  &__bio {
+    color: $color-gray;
+    font-size: 16px;
+    max-width: 551px;
+  }
+
+  &__numbers {
+    display: flex;
+    align-self: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
+.stats-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  svg {
+    width: 30px;
+    height: 30px;
+    color: $color-black;
+  }
+
+  &__name {
+    color: $color-black;
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+.stats-number {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  &__value {
+    color: $color-black;
+    font-size: 30px;
+  }
+
+  &__label {
+    color: $color-gray;
+  }
+}

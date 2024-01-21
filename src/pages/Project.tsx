@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { Header, Footer, Grid } from "~/layout";
-import { RichText, Title, IFrame, Button } from "~/components";
+import { RichText, IFrame, Button } from "~/components";
 import { getProjectBySlug } from "~/services/cms/queries";
 import { Icon } from "~/lib/Icon";
 import { useQuery } from "@apollo/client";
@@ -18,16 +18,16 @@ export const Project: FC = () => {
   const { data, loading, error } = useQuery(getProjectBySlug, {
     variables: { slug: id },
   });
-  const project = data?.projectCollection?.items[0] as ProjectData;
+  const projectData = data?.projectCollection?.items[0] as ProjectData;
 
-  if (loading || error || !project) {
+  if (loading || error || !projectData) {
     return <div>Loading...</div>;
   }
 
   return (
     <Grid>
       <Header />
-      <ProjectDetail project={project} />
+      <ProjectDetail project={projectData} />
       <Footer />
     </Grid>
   );
@@ -36,7 +36,6 @@ export const Project: FC = () => {
 const ProjectDetail: FC<ProjectDetailProps> = ({ project }) => {
   return (
     <article className="project">
-
       <div className="project__header">
         <p className="project__type">
           {project.type == "personal" ? "Personal" : "Professional"} Project

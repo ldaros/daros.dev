@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useQuery } from "@apollo/client";
 
 import { Terminal } from "~/features/unix/components/Terminal";
-import { Banner, Title, Card, CardGrid, Button } from "~/components";
+import { Banner, Title, Card, CardGrid, Button, Stats } from "~/components";
 import { Header, Footer, Grid } from "~/layout";
 import { Icon } from "~/lib/Icon";
 import { listProjects } from "~/services/cms/queries";
@@ -35,9 +35,13 @@ export const Home: FC = () => {
           <Title id="projects">Personal Projects</Title>
           <CardGrid>
             {projects?.map((project) => (
-              <ProjectCard {...project} />
+              <ProjectCard key={project.slug} {...project} />
             ))}
           </CardGrid>
+        </section>
+
+        <section className="page__section">
+          <Stats githubId="ldaros" />
         </section>
       </div>
       <Footer />
@@ -53,7 +57,6 @@ const ProjectCard: FC<ProjectData> = ({
   thumbnail,
 }) => (
   <Card
-    key={slug}
     icon={<Icon name={icon ?? ""} />}
     title={name}
     description={description ?? ""}

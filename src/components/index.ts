@@ -6,3 +6,4 @@ export { Card } from "./Card";
 export { CardGrid } from "./CardGrid";
 export { RichText } from "./RichText";
 export { IFrame } from "./IFrame";
+export { Stats } from "./Stats";
